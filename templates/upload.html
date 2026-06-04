@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medha PDF</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Medha PDF
+        </div>
+
+        <div class="nav-links">
+
+            <a href="javascript:void(0)" onclick="toggleWorkflow()">
+                How It Works
+            </a>
+
+            <a href="javascript:void(0)" onclick="toggleDeveloper()">
+                About Developer
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+
+            <h1>Chat With Your PDF</h1>
+
+            <p>
+                Upload any PDF document and start chatting with it using AI.
+            </p>
+
+        </div>
+
+        <!-- Animated Intro -->
+        <div class="marquee-container">
+
+            <div class="marquee-text">
+
+                Presenting Medha PDF • Upload PDFs • Generate Summaries • Chat With Documents • Retrieval Augmented Generation • Semantic Search • Intelligent Answers •
+
+            </div>
+
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-card" id="uploadCard">
+
+            <form id="uploadForm">
+
+                <div class="drop-zone" id="dropZone">
+
+                    <div class="icon">
+                        📄
+                    </div>
+
+                    <h3>Drag & Drop PDF Here</h3>
+
+                    <p>or click below to select a file</p>
+
+                    <input
+                        type="file"
+                        id="pdfFile"
+                        name="pdf"
+                        accept=".pdf"
+                        hidden
+                    >
+
+                    <button type="button" id="browseBtn">
+                        Choose PDF
+                    </button>
+
+                </div>
+
+                <div class="file-name" id="fileName"></div>
+
+                <button type="submit" class="upload-btn">
+                    Upload & Process
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Loading Card -->
+        <div class="loading-card hidden" id="loadingCard">
+
+            <div class="loader"></div>
+
+            <h2>Processing Your PDF</h2>
+
+            <p>
+                Extracting text, generating embeddings and preparing chat...
+            </p>
+
+        </div>
+
+        <!-- How It Works -->
+        <div class="info-card">
+
+            <div class="info-header" onclick="toggleWorkflow()">
+
+                <h3>How It Works</h3>
+
+                <span id="workflowIcon">+</span>
+
+            </div>
+
+            <div class="info-content" id="workflowContent">
+
+                <p>
+                    Upload PDF → Extract Text → Split Into Chunks →
+                    Generate Embeddings → Store In FAISS →
+                    Retrieve Relevant Context →
+                    Generate Accurate AI Responses.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- About Developer -->
+        <div class="info-card">
+
+            <div class="info-header" onclick="toggleDeveloper()">
+
+                <h3>About Developer</h3>
+
+                <span id="developerIcon">+</span>
+
+            </div>
+
+            <div class="info-content" id="developerContent">
+
+                <p>
+                   Hi, I'm Abhay Kumar Sharma, a passionate AI & Machine Learning Engineer with a strong interest in building intelligent, real-world applications that solve meaningful problems.
+                   I am particularly interested in Retrieval-Augmented Generation (RAG), Generative AI, Machine Learning, Data Science, and Full-Stack Development. Through continuous learning and hands-on projects, I strive to create innovative applications that make technology more accessible, efficient, and impactful.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Presenting <strong>Medha PDF</strong> — a RAG-based AI project
+                where users can upload PDF documents, generate summaries,
+                retrieve insights, and chat naturally with their content.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+
+</body>
+</html>
